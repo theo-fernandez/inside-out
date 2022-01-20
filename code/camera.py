@@ -2,7 +2,7 @@ import cv2
 import os
 from PIL import Image
 import hyperparameters as hp
-import predict
+from predict import predict
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -71,5 +71,4 @@ def detectEmotion(image_name):
     takePicture(image_name)
     findFace(image_name)
     emotion = predict("processed_" + image_name)
-    # emotion = "N/A"
     return emotion
